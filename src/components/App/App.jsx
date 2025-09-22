@@ -16,6 +16,8 @@ import SiteMission from "../AboutUs/SiteMission";
 
 import Review from "../Review/Review";
 
+import PageNotFound from "../PageNotFound/PageNotFound";
+
 function App() {
   const [reviews, setReviews] = useState([]);
 
@@ -34,6 +36,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path="*" element={<PageNotFound />} />
+
         <Route path="/" element={<Dashboard />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route
